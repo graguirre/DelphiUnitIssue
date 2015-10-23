@@ -8,7 +8,7 @@ Config=Release
 CC="C:\Program Files (x86)\Embarcadero\Studio\14.0\bin\dcc32"
 
 COMPDIR = -$O+
-OUTPUTDIR = -LE.\$(Platform)\$(Config)  -E.\$(Platform)\$(Config) -NU.\$(Platform)\$(Config) -LN.\$(Platform)\$(Config)
+OUTPUTDIR = -LE.\$(Platform)\$(Config)  -E.\$(Platform)\$(Config) -NU.\$(Platform)\$(Config) -LN.\$(Platform)\$(Config) -U.\$(Platform)\$(Config);.\3rdParty 
 
 DFLAGS = $(COMPDIR) -DRELEASE -M -NSSystem $(OUTPUTDIR) $(PATHS)
 
@@ -22,13 +22,13 @@ PackageD.bpl: PackageD.dpk PackageA.bpl PackageB.bpl
 	$(CC) $(DFLAGS) -LUPackageA;PackageB PackageD.dpk
 
 PackageC.bpl: PackageC.dpk
-	$(CC) $(DFLAGS) PackageC.dpk
+	$(CC) $(DFLAGS) -LUPackageExternal PackageC.dpk
 
 PackageB.bpl: PackageB.dpk
 	$(CC) $(DFLAGS) PackageB.dpk
 
-PackageA.bpl: PackageA.dpk
-	$(CC) $(DFLAGS) PackageA.dpk
+PackageA.bpl: PackageA.dpk 
+	$(CC) $(DFLAGS) -LUPackageExternal PackageA.dpk
 	
 clean:
 	del /q .\$(Platform)\$(Config)\*

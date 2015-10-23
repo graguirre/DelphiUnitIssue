@@ -29,7 +29,8 @@ package PackageC;
 {$IMPLICITBUILD ON}
 
 requires
-  rtl;
+  rtl,
+  PackageExternal;
 
 contains
   Unit3 in 'Unit3.pas';
