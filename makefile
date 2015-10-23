@@ -30,3 +30,5 @@ PackageB.bpl: PackageB.dpk
 PackageA.bpl: PackageA.dpk
 	$(CC) $(DFLAGS) PackageA.dpk
 	
+clean:
+	del /q .\$(Platform)\$(Config)\*

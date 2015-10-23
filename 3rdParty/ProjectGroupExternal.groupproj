@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DC419B16-BEA7-4FE2-B42B-AE39DF97CE41}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PackageExternal.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PackageExternal">
+        <MSBuild Projects="PackageExternal.dproj"/>
+    </Target>
+    <Target Name="PackageExternal:Clean">
+        <MSBuild Projects="PackageExternal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PackageExternal:Make">
+        <MSBuild Projects="PackageExternal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PackageExternal"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PackageExternal:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PackageExternal:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
