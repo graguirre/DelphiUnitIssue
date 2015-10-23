@@ -4,17 +4,24 @@ The aim of this project is dealing with error message: "Package %p1% and %p2% bo
 Let's imagine we have a project tree like above
 
 +---+        +---+
-| A |        | B | 
+| A |        | B |
 +-+-+        +-+-+
   |            |
   |            |
   |    +---+   |    +---+
-  +--->| D |<--+    | C | 
+  +--->| D |<--+    | C |
        +---+        +---+
-        |             |      
+        |             |
         |             |
         |    +---+    |
-        +--->|APP|<---+  
-             +---+  
+        +--->|APP|<---+
+             +---+
 
-Then we decide to add a new feature (external library) to package A and C.
+Then we decide to add a new feature (a misterious unit we've found somewhere over the rainbow) to package A and C. We simply try to append the unit to our packages and boom!
+
+Error: E2199 Packages 'PackageA' and 'PackageC' both contain unit 'UnitExternal'
+
+
+
+
+
