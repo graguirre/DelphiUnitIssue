@@ -2,6 +2,10 @@ unit Unit3;
 
 interface
 
+uses
+  UnitExternal
+  ;
+
 type
 IClass3 = interface
 ['{3A9D0469-0603-444E-B012-E18104ED2D9E}']

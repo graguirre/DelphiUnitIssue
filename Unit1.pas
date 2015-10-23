@@ -2,21 +2,36 @@ unit Unit1;
 
 interface
 
-type
-  IClass1 = interface
-  ['{8040D7E1-2959-4107-9C7F-2E431716B537}']
-    procedure msg;
-  end;
+uses
+  UnitExternal
+  ;
 
-  TClass1 = class(TInterfacedObject, IClass1)
-  public
-    procedure msg;
-  end;
+type
+
+IClass1 = interface
+['{8040D7E1-2959-4107-9C7F-2E431716B537}']
+  procedure msg;
+end;
+
+TClass1 = class(TInterfacedObject, IClass1)
+private
+  FExtObj : IClassE;
+public
+  constructor Create;
+  procedure msg;
+end;
 
 implementation
 
+constructor TClass1.Create;
+begin
+  FExtObj := TClassE.Create;
+end;
+
+
 procedure TClass1.msg;
 begin
+  FExtObj.msg;
   writeln('message from TClass1');
 end;
 
