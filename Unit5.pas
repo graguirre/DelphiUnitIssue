@@ -32,7 +32,7 @@ end;
 
 procedure TClass5.msg;
 begin
-  writeln('Im object no 5, requires:');
+  writeln('Im object no 5 from package E, requires packages C & D');
   FObjC.msg;
   FObjD.msg;
 end;

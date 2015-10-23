@@ -110,7 +110,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UnitSearchPath>.\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
         <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
     </PropertyGroup>

@@ -31,8 +31,8 @@ end;
 
 procedure TClass1.msg;
 begin
+  writeln('Im object no 1 from package A, requires external package');
   FExtObj.msg;
-  writeln('message from TClass1');
 end;
 
 end.

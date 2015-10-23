@@ -19,7 +19,7 @@ implementation
 
 procedure TClass2.msg;
 begin
-  writeln('message from TClass2');
+  writeln('Im object no 2 from package B, requires no package');
 end;
 
 end.

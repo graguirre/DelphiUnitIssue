@@ -13,17 +13,25 @@ IClass3 = interface
 end;
 
 TClass3 = class(TInterfacedObject, IClass3)
+private
+  FExtObj : IClassE;
 public
+  constructor Create;
   procedure msg;
 end;
 
 
 implementation
 
+constructor TClass3.Create;
+begin
+  FExtObj := TClassE.Create;
+end;
 
 procedure TClass3.msg;
 begin
-  writeln('message from TClass3');
+  writeln('Im object no 3 from package C, requires external package');
+  FExtObj.msg;
 end;
 
 end.
