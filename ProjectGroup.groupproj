@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{42A2C570-70B6-443D-9828-99921B8437D5}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PackageA.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PackageB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PackageC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PackageD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PackageE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PackageA">
+        <MSBuild Projects="PackageA.dproj"/>
+    </Target>
+    <Target Name="PackageA:Clean">
+        <MSBuild Projects="PackageA.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PackageA:Make">
+        <MSBuild Projects="PackageA.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PackageB">
+        <MSBuild Projects="PackageB.dproj"/>
+    </Target>
+    <Target Name="PackageB:Clean">
+        <MSBuild Projects="PackageB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PackageB:Make">
+        <MSBuild Projects="PackageB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PackageC">
+        <MSBuild Projects="PackageC.dproj"/>
+    </Target>
+    <Target Name="PackageC:Clean">
+        <MSBuild Projects="PackageC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PackageC:Make">
+        <MSBuild Projects="PackageC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PackageD">
+        <MSBuild Projects="PackageD.dproj"/>
+    </Target>
+    <Target Name="PackageD:Clean">
+        <MSBuild Projects="PackageD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PackageD:Make">
+        <MSBuild Projects="PackageD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PackageE">
+        <MSBuild Projects="PackageE.dproj"/>
+    </Target>
+    <Target Name="PackageE:Clean">
+        <MSBuild Projects="PackageE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PackageE:Make">
+        <MSBuild Projects="PackageE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project">
+        <MSBuild Projects="Project.dproj"/>
+    </Target>
+    <Target Name="Project:Clean">
+        <MSBuild Projects="Project.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project:Make">
+        <MSBuild Projects="Project.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PackageA;PackageB;PackageC;PackageD;PackageE;Project"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PackageA:Clean;PackageB:Clean;PackageC:Clean;PackageD:Clean;PackageE:Clean;Project:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PackageA:Make;PackageB:Make;PackageC:Make;PackageD:Make;PackageE:Make;Project:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
