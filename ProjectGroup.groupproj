@@ -13,13 +13,13 @@
             <Dependencies/>
         </Projects>
         <Projects Include="PackageD.dproj">
-            <Dependencies/>
+            <Dependencies>PackageA.dproj;PackageB.dproj</Dependencies>
         </Projects>
         <Projects Include="PackageE.dproj">
-            <Dependencies/>
+            <Dependencies>PackageD.dproj;PackageC.dproj</Dependencies>
         </Projects>
         <Projects Include="Project.dproj">
-            <Dependencies/>
+            <Dependencies>PackageE.dproj</Dependencies>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -56,31 +56,31 @@
     <Target Name="PackageC:Make">
         <MSBuild Projects="PackageC.dproj" Targets="Make"/>
     </Target>
-    <Target Name="PackageD">
+    <Target Name="PackageD" DependsOnTargets="PackageA;PackageB">
         <MSBuild Projects="PackageD.dproj"/>
     </Target>
-    <Target Name="PackageD:Clean">
+    <Target Name="PackageD:Clean" DependsOnTargets="PackageA:Clean;PackageB:Clean">
         <MSBuild Projects="PackageD.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="PackageD:Make">
+    <Target Name="PackageD:Make" DependsOnTargets="PackageA:Make;PackageB:Make">
         <MSBuild Projects="PackageD.dproj" Targets="Make"/>
     </Target>
-    <Target Name="PackageE">
+    <Target Name="PackageE" DependsOnTargets="PackageD;PackageC">
         <MSBuild Projects="PackageE.dproj"/>
     </Target>
-    <Target Name="PackageE:Clean">
+    <Target Name="PackageE:Clean" DependsOnTargets="PackageD:Clean;PackageC:Clean">
         <MSBuild Projects="PackageE.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="PackageE:Make">
+    <Target Name="PackageE:Make" DependsOnTargets="PackageD:Make;PackageC:Make">
         <MSBuild Projects="PackageE.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Project">
+    <Target Name="Project" DependsOnTargets="PackageE">
         <MSBuild Projects="Project.dproj"/>
     </Target>
-    <Target Name="Project:Clean">
+    <Target Name="Project:Clean" DependsOnTargets="PackageE:Clean">
         <MSBuild Projects="Project.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Project:Make">
+    <Target Name="Project:Make" DependsOnTargets="PackageE:Make">
         <MSBuild Projects="Project.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">

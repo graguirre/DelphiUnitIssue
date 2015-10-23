@@ -130,7 +130,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <UsePackages>true</UsePackages>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UnitSearchPath>.\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <Manifest_File>None</Manifest_File>
         <DCC_UsePackage>PackageE</DCC_UsePackage>
     </PropertyGroup>
