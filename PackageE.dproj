@@ -115,8 +115,8 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="PackageCR.dcp"/>
-        <DCCReference Include="PackageDR.dcp"/>
+        <DCCReference Include="PackageC.dcp"/>
+        <DCCReference Include="PackageD.dcp"/>
         <DCCReference Include="Unit5.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

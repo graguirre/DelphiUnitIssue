@@ -30,8 +30,8 @@ package PackageE;
 
 requires
   rtl,
-  PackageCR,
-  PackageDR;
+  PackageC,
+  PackageD;
 
 contains
   Unit5 in 'Unit5.pas';
