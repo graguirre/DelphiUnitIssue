@@ -1,4 +1,4 @@
-package PackageD;
+package PackageAD;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -30,10 +30,9 @@ package PackageD;
 
 requires
   rtl,
-  PackageA,
-  PackageB;
+  PackageExternalD;
 
 contains
-  Unit4 in 'Unit4.pas';
+  Unit1 in 'Unit1.pas';
 
 end.

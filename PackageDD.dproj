@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{7ED454F0-0B7B-403D-9B0A-2B0EB6D2C95D}</ProjectGuid>
-        <MainSource>PackageD.dpk</MainSource>
+        <MainSource>PackageDD.dpk</MainSource>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -60,7 +60,7 @@
         <GenDll>true</GenDll>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
         <GenPackage>true</GenPackage>
-        <SanitizedProjectName>PackageD</SanitizedProjectName>
+        <SanitizedProjectName>PackageDD</SanitizedProjectName>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -184,7 +184,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">PackageD.dpk</Source>
+                    <Source Name="MainSource">PackageDD.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment/>

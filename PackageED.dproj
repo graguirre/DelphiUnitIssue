@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{C38B3D22-2955-4921-ABF4-77BAA3EEC2C9}</ProjectGuid>
-        <MainSource>PackageA.dpk</MainSource>
+        <ProjectGuid>{13045DA0-BB16-45B1-88F5-14E0F83F6869}</ProjectGuid>
+        <MainSource>PackageED.dpk</MainSource>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -60,7 +60,7 @@
         <GenDll>true</GenDll>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
         <GenPackage>true</GenPackage>
-        <SanitizedProjectName>PackageA</SanitizedProjectName>
+        <SanitizedProjectName>PackageED</SanitizedProjectName>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -94,9 +94,9 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <DCC_UnitSearchPath>.\3rdParty\Win32\Debug;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -109,19 +109,20 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
-        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
+        <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="PackageExternalD.dcp"/>
-        <DCCReference Include="Unit1.pas"/>
+        <DCCReference Include="PackageC.dcp"/>
+        <DCCReference Include="PackageD.dcp"/>
+        <DCCReference Include="Unit5.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -183,7 +184,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">PackageA.dpk</Source>
+                    <Source Name="MainSource">PackageED.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment/>
