@@ -108,8 +108,12 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+<<<<<<< HEAD:PackageCD.dproj
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdparty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+=======
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+>>>>>>> parent of 7dbfbe6... minor compilation change:PackageC.dproj
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
