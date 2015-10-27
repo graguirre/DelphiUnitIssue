@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{4CD9C444-258A-4A8C-8EF8-78517D294B6C}</ProjectGuid>
-        <MainSource>PackageDR.dpk</MainSource>
+        <ProjectGuid>{CF988C2C-5C99-47A1-A991-EEA4E2D2D984}</ProjectGuid>
+        <MainSource>PackageA.dpk</MainSource>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -60,8 +60,8 @@
         <GenPackage>true</GenPackage>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
-        <SanitizedProjectName>PackageDR</SanitizedProjectName>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <SanitizedProjectName>PackageA</SanitizedProjectName>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
@@ -105,19 +105,18 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
+        <DCC_UnitSearchPath>.\3rdParty\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="PackageAR.dcp"/>
-        <DCCReference Include="PackageBR.dcp"/>
-        <DCCReference Include="Unit4.pas"/>
+        <DCCReference Include="PackageExternalR.dcp"/>
+        <DCCReference Include="Unit1.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -179,7 +178,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">PackageDR.dpk</Source>
+                    <Source Name="MainSource">PackageA.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment/>

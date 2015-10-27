@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{426356C3-1BF4-42C8-9EB9-7A771199C8C7}</ProjectGuid>
-        <MainSource>PackageER.dpk</MainSource>
+        <ProjectGuid>{4CD9C444-258A-4A8C-8EF8-78517D294B6C}</ProjectGuid>
+        <MainSource>PackageD.dpk</MainSource>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -60,7 +60,7 @@
         <GenPackage>true</GenPackage>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
-        <SanitizedProjectName>PackageER</SanitizedProjectName>
+        <SanitizedProjectName>PackageD</SanitizedProjectName>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -115,9 +115,9 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="PackageCR.dcp"/>
-        <DCCReference Include="PackageDR.dcp"/>
-        <DCCReference Include="Unit5.pas"/>
+        <DCCReference Include="PackageAR.dcp"/>
+        <DCCReference Include="PackageBR.dcp"/>
+        <DCCReference Include="Unit4.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -179,7 +179,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
-                    <Source Name="MainSource">PackageER.dpk</Source>
+                    <Source Name="MainSource">PackageD.dpk</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment/>

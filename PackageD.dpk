@@ -1,4 +1,4 @@
-package PackageCR;
+package PackageD;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -25,13 +25,15 @@ package PackageCR;
 {$IMAGEBASE $400000}
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
 {$IMPLICITBUILD ON}
 
 requires
   rtl,
-  PackageExternalR;
+  PackageAR,
+  PackageBR;
 
 contains
-  Unit3 in 'Unit3.pas';
+  Unit4 in 'Unit4.pas';
 
 end.
