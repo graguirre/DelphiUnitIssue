@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{0ED36819-3306-4359-BAE6-114EDEF73560}</ProjectGuid>
-        <MainSource>PackageExternal.dpk</MainSource>
+        <MainSource>PackageExternalR.dpk</MainSource>
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
@@ -56,12 +56,13 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
         <GenDll>true</GenDll>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
         <GenPackage>true</GenPackage>
-        <SanitizedProjectName>PackageExternal</SanitizedProjectName>
+        <SanitizedProjectName>PackageExternalR</SanitizedProjectName>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
@@ -94,6 +95,10 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
+        <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -103,11 +108,10 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <DCC_DcuOutput>.\</DCC_DcuOutput>
-        <DCC_DcpOutput>.\</DCC_DcpOutput>
+        <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_BplOutput>.\</DCC_BplOutput>
+        <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -133,10 +137,9 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">PackageExternal.dpk</Source>
+                    <Source Name="MainSource">PackageExternalR.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Windows\system32\tmsdXE6.bpl">TMS Component Pack</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\JvCoreDesign200.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\JvCoreDesign200.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\JvBDEDesign200.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\JvBDEDesign200.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\JvDBDesign200.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\14.0\Bpl\JvDBDesign200.bpl not found</Excluded_Packages>

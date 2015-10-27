@@ -14,7 +14,7 @@ var
 begin
   try
     FObj := TClass5.Create;
-    FObj.msg;
+    writeln(FObj.msg);
     readln;
   except
     on E: Exception do

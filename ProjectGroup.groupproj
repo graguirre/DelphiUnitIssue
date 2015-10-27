@@ -21,6 +21,9 @@
         <Projects Include="Project.dproj">
             <Dependencies>PackageE.dproj</Dependencies>
         </Projects>
+        <Projects Include="ProjectForm.dproj">
+            <Dependencies>PackageE.dproj</Dependencies>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +86,23 @@
     <Target Name="Project:Make" DependsOnTargets="PackageE:Make">
         <MSBuild Projects="Project.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ProjectForm" DependsOnTargets="PackageE">
+        <MSBuild Projects="ProjectForm.dproj"/>
+    </Target>
+    <Target Name="ProjectForm:Clean" DependsOnTargets="PackageE:Clean">
+        <MSBuild Projects="ProjectForm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjectForm:Make" DependsOnTargets="PackageE:Make">
+        <MSBuild Projects="ProjectForm.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="PackageA;PackageB;PackageC;PackageD;PackageE;Project"/>
+        <CallTarget Targets="PackageA;PackageB;PackageC;PackageD;PackageE;Project;ProjectForm"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="PackageA:Clean;PackageB:Clean;PackageC:Clean;PackageD:Clean;PackageE:Clean;Project:Clean"/>
+        <CallTarget Targets="PackageA:Clean;PackageB:Clean;PackageC:Clean;PackageD:Clean;PackageE:Clean;Project:Clean;ProjectForm:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="PackageA:Make;PackageB:Make;PackageC:Make;PackageD:Make;PackageE:Make;Project:Make"/>
+        <CallTarget Targets="PackageA:Make;PackageB:Make;PackageC:Make;PackageD:Make;PackageE:Make;Project:Make;ProjectForm:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

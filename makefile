@@ -12,6 +12,9 @@ OUTPUTDIR = -LE.\$(Platform)\$(Config)  -E.\$(Platform)\$(Config) -NU.\$(Platfor
 
 DFLAGS = $(COMPDIR) -DRELEASE -M -NSSystem $(OUTPUTDIR) $(PATHS)
 
+ProjectForm.exe: ProjectForm.dpr PackageE.bpl	
+	$(CC) $(DFLAGS) -LUPackageE ProjectForm.dpr
+
 Project.exe: Project.dpr PackageE.bpl
 	$(CC) $(DFLAGS) -LUPackageE Project.dpr
 	

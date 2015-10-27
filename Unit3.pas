@@ -9,7 +9,7 @@ uses
 type
 IClass3 = interface
 ['{3A9D0469-0603-444E-B012-E18104ED2D9E}']
-  procedure msg;
+  function msg: String;
 end;
 
 TClass3 = class(TInterfacedObject, IClass3)
@@ -17,7 +17,7 @@ private
   FExtObj : IClassE;
 public
   constructor Create;
-  procedure msg;
+  function msg: String;
 end;
 
 
@@ -28,10 +28,9 @@ begin
   FExtObj := TClassE.Create;
 end;
 
-procedure TClass3.msg;
+function TClass3.msg: String;
 begin
-  writeln('Im object no 3 from package C, requires external package');
-  FExtObj.msg;
+  Result := 'Im object no 3 from package C, requires external package' + #13#10 + FExtObj.msg;
 end;
 
 end.

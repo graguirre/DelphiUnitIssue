@@ -10,7 +10,7 @@ uses
 type
 IClass4 = interface
 ['{8D7181A6-F70A-4593-A11D-E60AC64ADD20}']
-  procedure msg;
+  function msg:String;
 end;
 
 TClass4 = class(TInterfacedObject, IClass4)
@@ -18,7 +18,7 @@ TClass4 = class(TInterfacedObject, IClass4)
   FObjB : IClass2;
 public
   constructor Create;
-  procedure msg;
+  function msg: String;
 end;
 
 
@@ -30,11 +30,9 @@ begin
   FObjB := TClass2.Create;
 end;
 
-procedure TClass4.msg;
+function TClass4.msg: String;
 begin
-  writeln('Im object no 4 from package D, requires packages A & B');
-  FObjA.msg;
-  FObjB.msg;
+  Result := 'Im object no 4 from package D, requires packages A & B' + #13#10 + FObjA.msg + #13#10 + FObjB.msg;
 end;
 
 end.

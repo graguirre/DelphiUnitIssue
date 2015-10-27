@@ -5,21 +5,21 @@ interface
 type
 IClass2 = interface
 ['{87DE6B1A-F5B9-4C2B-95B3-8CB200611E23}']
-  procedure msg;
+  function msg: String;
 end;
 
 TClass2 = class(TInterfacedObject, IClass2)
 public
-  procedure msg;
+  function msg: String;
 end;
 
 
 implementation
 
 
-procedure TClass2.msg;
+function TClass2.msg: String;
 begin
-  writeln('Im object no 2 from package B, requires no package');
+  Result := 'Im object no 2 from package B, requires no package';
 end;
 
 end.

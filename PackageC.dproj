@@ -5,7 +5,7 @@
         <ProjectVersion>15.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Package</AppType>
@@ -94,6 +94,7 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_UnitSearchPath>.\3rdParty\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_BplOutput>.\$(Platform)\$(Config)</DCC_BplOutput>
@@ -108,7 +109,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
-        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdparty;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_DcpOutput>.\$(Platform)\$(Config)</DCC_DcpOutput>
@@ -119,7 +120,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="PackageExternal.dcp"/>
+        <DCCReference Include="PackageExternalD.dcp"/>
         <DCCReference Include="Unit3.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
