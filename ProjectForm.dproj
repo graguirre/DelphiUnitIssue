@@ -91,6 +91,7 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_ExeOutput>.\Deploy</DCC_ExeOutput>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <DCC_UsePackage>PackageE;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
