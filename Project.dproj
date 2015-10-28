@@ -117,7 +117,7 @@
         <DCC_ExeOutput>.\Deploy</DCC_ExeOutput>
         <UsePackages>true</UsePackages>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>.\$(Platform)\$(Config);.\3rdParty\Win32\Release;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <Manifest_File>None</Manifest_File>
         <DCC_UsePackage>PackageE</DCC_UsePackage>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
