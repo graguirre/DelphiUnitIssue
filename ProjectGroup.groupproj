@@ -19,10 +19,10 @@
             <Dependencies>PackageD.dproj;PackageC.dproj</Dependencies>
         </Projects>
         <Projects Include="Project.dproj">
-            <Dependencies/>
+            <Dependencies>PackageE.dproj</Dependencies>
         </Projects>
         <Projects Include="ProjectForm.dproj">
-            <Dependencies/>
+            <Dependencies>PackageE.dproj</Dependencies>
         </Projects>
     </ItemGroup>
     <ProjectExtensions>
@@ -77,22 +77,22 @@
     <Target Name="PackageE:Make" DependsOnTargets="PackageD:Make;PackageC:Make">
         <MSBuild Projects="PackageE.dproj" Targets="Make"/>
     </Target>
-    <Target Name="Project">
+    <Target Name="Project" DependsOnTargets="PackageE">
         <MSBuild Projects="Project.dproj"/>
     </Target>
-    <Target Name="Project:Clean">
+    <Target Name="Project:Clean" DependsOnTargets="PackageE:Clean">
         <MSBuild Projects="Project.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="Project:Make">
+    <Target Name="Project:Make" DependsOnTargets="PackageE:Make">
         <MSBuild Projects="Project.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ProjectForm">
+    <Target Name="ProjectForm" DependsOnTargets="PackageE">
         <MSBuild Projects="ProjectForm.dproj"/>
     </Target>
-    <Target Name="ProjectForm:Clean">
+    <Target Name="ProjectForm:Clean" DependsOnTargets="PackageE:Clean">
         <MSBuild Projects="ProjectForm.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="ProjectForm:Make">
+    <Target Name="ProjectForm:Make" DependsOnTargets="PackageE:Make">
         <MSBuild Projects="ProjectForm.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
